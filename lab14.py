@@ -29,7 +29,9 @@ try:
             sentence = line
             print(sentence)
 
-        # for each line, remove dashes
+        # for each line, remove punctuation
+
+        # lowercase it all
 
         eggFile.close()
 except IOError:
