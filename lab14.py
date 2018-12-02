@@ -15,8 +15,6 @@ def problem1():
     wordCount = {}
     filename = 'eggs.txt'
 
-
-    print('trying file open...')
     # process file
     try:
       # open file
@@ -37,7 +35,8 @@ def problem1():
 
         eggFile.close()
     except IOError:
-        print('\nIO Error detected. File Operation Failed.')
+        print('\nIO Error Detected Problem 1. File Operation Failed.')
+        raise SystemExit
     finally:
         print('\nFile Reading Sequence Finished: Problem 1')
 
@@ -62,17 +61,36 @@ def problem1():
 
 def problem2():
 
+    import re
+
+    # help with regex
+    # https://stackoverflow.com/questions/7167279/regex-select-all-
+    # text-between-tags
+
     # declare variables
     filename = 'foothill_news.html'
 
+    # originally tried using '<h3>.*</h3>' before used source help.
+    regex = re.compile(r'<h3>(.*?)</h3>')
+
+    # read file
     try:
-        # open file
         with open(filename, 'r') as newsFile:
+            newsText = newsFile.read()
         newsFile.close()
     except IOError:
         print('\nIO Error Detected Problem 2. File Operation Failed')
-    finally
+        raise SystemExit
+    finally:
         print('\nFile Reading Sequence Finished: Problem 2')
+
+    # process file
+    headlines = regex.findall(newsText)
+
+    # print results
+    print('*** Foothill Breaking News! ***')
+    for line in headlines:
+        print('> ' + line)
 
 if __name__ == '__main__':
   problem1()
