@@ -50,7 +50,7 @@ def problem1():
 
   # print out results
     print('There are %d words in %s' % (totalWords, filename))
-    print('The most commonly occuring word is %s with %d occurances' \
+    print('The most commonly occuring word is \'%s\' with %d occurances' \
         % (mostCommon, wordCount[mostCommon]))
 
 
