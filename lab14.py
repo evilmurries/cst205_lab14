@@ -50,7 +50,8 @@ def problem1():
 
   # print out results
     print('There are %d words in %s' % (totalWords, filename))
-    print('The most commonly occuring word is %s' % mostCommon)
+    print('The most commonly occuring word is %s with %d occurances' \
+        % (mostCommon, wordCount[mostCommon]))
 
 
 
@@ -61,6 +62,7 @@ def problem1():
 
 def problem2():
 
+    # import statements
     import re
 
     # help with regex
