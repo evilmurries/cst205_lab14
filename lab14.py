@@ -12,10 +12,11 @@
 ###############################################################################
 
 def problem1():
-  # declare variables
+    # declare variables
     wordCount = {}
     filename = 'eggs.txt'
 
+    print('Problem 1:')
     # process file
     try:
       # open file
@@ -50,7 +51,10 @@ def problem1():
             mostCommon = word
 
   # print out results
-    print('There are %d words in %s' % (totalWords, filename))
+    print('Full word count:')
+    for key in wordCount:
+        print('%s: %d' % (key, wordCount[key]), end='  ')
+    print('\nThere are %d words in %s' % (totalWords, filename))
     print('The most commonly occuring word is \'%s\' with %d occurances' \
         % (mostCommon, wordCount[mostCommon]))
 
@@ -76,6 +80,7 @@ def problem2():
     # help sourced above.
     regex = re.compile(r'<h3>(.*?)</h3>')
 
+    print('\nProblem 2:')
     # read file
     try:
         with open(filename, 'r') as newsFile:
