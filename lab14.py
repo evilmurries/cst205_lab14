@@ -2,6 +2,7 @@
 # Written 29 November 2018
 # Python version 3.7.1
 # Developed with Sublime Text 3.1.1 Build 3176 and Mac OS X Terminal
+# Assignment help sourced where used
 
 ###############################################################################
 # Problem 1
@@ -19,7 +20,7 @@ def problem1():
     try:
       # open file
         with open(filename, 'r') as eggFile:
-            print('opened file')
+            print('opened ' + filename)
 
             # read in a line and count the words
             for line in eggFile:
@@ -65,19 +66,20 @@ def problem2():
     # import statements
     import re
 
-    # help with regex
-    # https://stackoverflow.com/questions/7167279/regex-select-all-
-    # text-between-tags
-
     # declare variables
     filename = 'foothill_news.html'
 
-    # originally tried using '<h3>.*</h3>' before used source help.
+    # help with regex
+    # https://stackoverflow.com/questions/7167279/regex-select-all-
+    # text-between-tags
+    # originally tried using variations on '<h3>.*</h3>' before using 
+    # help sourced above.
     regex = re.compile(r'<h3>(.*?)</h3>')
 
     # read file
     try:
         with open(filename, 'r') as newsFile:
+            print('opened ' + filename)
             newsText = newsFile.read()
         newsFile.close()
     except IOError:
@@ -94,6 +96,7 @@ def problem2():
     for line in headlines:
         print('> ' + line)
 
+# Main function to run the script
 if __name__ == '__main__':
   problem1()
   problem2()
